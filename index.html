@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fomrulario Ajax</title>
+  </head>
+  <body>
+    <div class="formulario"></div>
+    <form class="form" onsubmit="formularioController.send(event)">
+      First name:<br>
+      <input type="text" id="nome">
+      <br>
+      Email:<br>
+      <input type="text" id="email">
+      <br>
+      Telefone:<br>
+      <input type="text" id="telefone">
+      <br>
+      Mensagem:<br>
+      <input type="text" id="mensagem">
+
+      <br><br>
+      <button class="button" type="submit">Enviar</button>
+    </form>
+    <script src="js/controller/FormularioController.js"></script>
+    <script>
+
+      let formularioController = new FormularioController();
+
+
+    </script>
+  </body>
+</html>
