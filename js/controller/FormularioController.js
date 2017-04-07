@@ -31,11 +31,11 @@ class FormularioController{
       xhr.open("POST", "php/mail.php", true);
       //Send the proper header information along with the request
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {//Call a function when the state changes.
+      xhr.onreadystatechange = () => {
+
         if(xhr.readyState == 4 && xhr.status == 200) {
           console.log("fim do request");
-          //incluir aqui linpar campos
-          //this._clearForm();
+          this._clearForm();
         }
       }
       xhr.send(`nome=${nome}&telefone=${telefone}&email=${email}&mensagem=${mensagem}`);
