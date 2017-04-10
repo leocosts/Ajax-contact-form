@@ -6,9 +6,12 @@ if($_POST){
   $mensagem = $_POST['mensagem'];
 }
 
+$headers = 'From: email@email.com' . "\r\n" .
+    'Reply-To: email@email.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
-$msg = "Nome: ".$nome. " email " .$email. " telefone: " .$telefone. " mensagem: " .$mensagem;
+$msg = "Nome: ".$nome. " Email: " .$email. " Telefone: " .$telefone. " Mensagem: " .$mensagem;
 $msg = wordwrap($msg,70);
-mail("leocosts@gmail.com","Contato",$msg);
+mail("leocosts@gmail.com","Contato",$msg,$headers);
 
 ?>

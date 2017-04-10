@@ -15,17 +15,21 @@ class FormularioController{
     let email = this._imputEmail.value;
     let telefone = this._imputTelefone.value;
     let mensagem = this._imputMensagem.value;
+    let alertcopy = "";
+
+
 
     /* ainda nao implementei as regras corretamente ;) */
     if (!/\w/.test(nome)){
-      throw new Error('formato de nome errado');
+      alertcopy = "nome errado";
     }else if (!/^\w*(\.\w*)?@\w*\.[a-z]+(\.[a-z]+)?$/.test(email)){
-      throw new Error('formato de email errado');
+      alertcopy = "email errado";
     }else if (!/^\d/.test(telefone)){
-      throw new Error('formato de telefone errado');
+      alertcopy = "telefone errado";
     }else if (!/\w/.test(mensagem)){
-      throw new Error('formato de mensagem errado');
+      alertcopy = "mensagem errada";
     }else{
+      alertcopy = "mensagem enviada com sucesso";
       // funcao ajax
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "php/mail.php", true);
@@ -40,6 +44,11 @@ class FormularioController{
       }
       xhr.send(`nome=${nome}&telefone=${telefone}&email=${email}&mensagem=${mensagem}`);
     }
+
+    let errormessage = new ErrorMessage();
+    /*errormessage.showMessage(errormessages); */
+    errormessage.showMessage(alertcopy);
+
   }
 
   _clearForm(){

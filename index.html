@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Fomrulario Ajax</title>
+
+    <style>
+      span {color: red;}
+    </style>
+
+
   </head>
   <body>
     <div class="formulario"></div>
@@ -18,11 +24,13 @@
       <br>
       Mensagem:<br>
       <input type="text" id="mensagem">
-
+      <br><br>
+      <span class="error-message"></span>
       <br><br>
       <button class="button" type="submit">Enviar</button>
     </form>
     <script src="js/controller/FormularioController.js"></script>
+    <script src="js/model/ErrorMessage.js"></script>
     <script>
 
       let formularioController = new FormularioController();
