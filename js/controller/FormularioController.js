@@ -20,13 +20,13 @@ class FormularioController{
 
 
     /* ainda nao implementei as regras corretamente ;) */
-    if (!/\w/.test(nome)){
+    if (!/\w{2,}/.test(nome)){
       alertcopy = "nome errado";
-    }else if (!/^\w*(\.\w*)?@\w*\.[a-z]+(\.[a-z]+)?$/.test(email)){
+    }else if (!/^\w{2,}(\.\w*)?@\w{2,}\.[a-z]+(\.[a-z]+)?$/.test(email)){
       alertcopy = "email errado";
-    }else if (!/^\d/.test(telefone)){
+    }else if (!/\d/.test(telefone)){
       alertcopy = "telefone errado";
-    }else if (!/\w/.test(mensagem)){
+    }else if (!/\w{5,}/.test(mensagem)){
       alertcopy = "mensagem errada";
     }else{
       alertcopy = "mensagem enviada com sucesso";
